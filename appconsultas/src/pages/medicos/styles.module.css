@@ -1,0 +1,89 @@
+.containerMedicos{
+    background:white;
+    width: calc(100% - 6rem);
+    height: calc(100vh - 3rem);
+    border-radius: 5px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.containerMedicos h3{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.containerMedicos form{
+    width: 100%;
+    margin-top:2rem;
+    
+}
+
+.containerMedicos form{
+    width: 100%;
+    
+}
+
+.containerFields{
+
+    width: 100%;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    column-gap: 0.5rem;
+    row-gap: 0.7rem;
+
+}
+
+.containerFields label{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.containerFields input{
+    border:1px solid #dddbdb;
+    outline: #dddbdb;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.containerBtns{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.containerBtns button{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid #f1efef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeee;
+    box-shadow: 0px 1px 3px 1px #b9b9b9;
+    cursor: pointer;
+    margin-right: 0.7rem;
+}
+
+.containerBtns button.clsdisabled{
+    opacity: 0.5!important;
+    pointer-events: none!important;
+}
+
+.containerBtns button:not(.clsdisabled):hover{
+    background: #43b341!important;
+    color:white!important;
+}
+
+@media (max-width: 720px){
+    .containerMedicos{
+        width: 100%!important ;
+        height: calc(100vh - 7rem)!important;
+    }
+}
+

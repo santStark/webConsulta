@@ -1,0 +1,48 @@
+.containerMenu{
+    background:white;
+    width: 6rem;
+    height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+
+}
+
+.containerMenu >a {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid #f1efef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeee;
+    box-shadow: 0px 1px 3px 1px #b9b9b9;
+    margin-top:1rem;
+
+}
+
+.containerMenu >a:hover{
+
+    background: #43b341;
+    color:white;
+
+}
+
+@media (max-width: 720px){
+    .containerMenu{
+        flex-direction: row;
+        width: 100%;
+        height: 7rem!important;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .containerMenu >a {
+        margin-top:0;
+        margin-left: 1rem;
+    }
+}
+

@@ -1,0 +1,77 @@
+:root{
+    --white:#fff;
+    --background:#f2f3f5;
+    --gray:#dcdde0;
+    --text:#666666;
+    --text-highçight:#b3b9ff;
+    --title:#2e384d;
+    --red:#e83f5b;
+    --green:#4cd62b;
+    --blue:#5965e0;
+    --blue-dark:#4953b8;
+    --blue-twitter:#2aa9e0;
+}
+
+@media (max-width: 1080px){
+    html{
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px){
+    html{
+        font-size: 87.5%;
+    }
+    .container{
+        flex-direction: column !important;
+    }
+}
+
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    color: var(--text);
+}
+
+input{
+    color: var(--text);
+}
+
+button{
+    cursor: pointer;
+    color: var(--text);
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.divBack{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../../public/back1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(65%) sepia(201%) hue-rotate(134deg) saturate(185%);
+    /* brightness(70%) sepia(200%) hue-rotate(206deg) saturate(800%);*/
+}
+

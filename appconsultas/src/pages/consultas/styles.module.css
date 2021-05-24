@@ -1,0 +1,191 @@
+.containerConsulta{
+    background:white;
+    width: calc(100% - 6rem);
+    height: calc(100vh - 3rem);
+    border-radius: 5px;
+    padding: 1rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+.containerConsulta h3{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.containerConsulta form{
+    width: 100%;
+    margin-top:2rem;
+    
+}
+
+.containerConsulta form{
+    width: 100%;
+    
+}
+
+.containerFields{
+
+    width: 100%;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    column-gap: 0.5rem;
+    row-gap: 0.7rem;
+
+}
+
+.containerFields label{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.containerFields input{
+    border:1px solid #dddbdb;
+    outline: #dddbdb;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.containerFields >div{
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    column-gap: 5px;
+}
+
+.containerFields button{
+    border-radius: 5px;
+    border: 1px solid #f1efef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeee;
+    cursor: pointer;
+}
+
+.containerFields button:hover{
+    background: #43b341!important;
+    color:white!important;
+}
+
+.containerBtns{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.containerBtns button{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid #f1efef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeee;
+    box-shadow: 0px 1px 3px 1px #b9b9b9;
+    cursor: pointer;
+    margin-right: 0.7rem;
+}
+
+.containerBtns button.clsdisabled{
+    opacity: 0.5!important;
+    pointer-events: none!important;
+}
+
+.containerBtns button:not(.clsdisabled):hover{
+    background: #43b341!important;
+    color:white!important;
+}
+
+@media (max-width: 720px){
+    .containerConsulta{
+        width: 100%!important ;
+        height: calc(100vh - 7rem)!important;
+    }
+}
+
+.containerPesquisaPaciente{
+    position: absolute;
+    top:0;
+    left:0;
+    background:#1f201d8c;
+    width: 100%;
+    height: 100%;
+}
+
+.containerPesquisaMedico{
+    position: absolute;
+    top:0;
+    left:0;
+    background:#1f201d8c;
+    width: 100%;
+    height: 100%;
+}
+
+.containerPesquisaListagemUser{
+    width: 80%;
+    background:white;
+    margin: 0 auto;
+    margin-top:3rem;
+    padding: 1rem;
+    border-radius: 15px;;
+}
+
+.containerSearchBtn{
+    display: flex;
+    flex-direction: row;
+}
+
+.containerSearchBtn button{
+    border-radius: 5px;
+    border: 1px solid #f1efef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeee;
+    margin-left: 5px;
+    cursor: pointer;
+    width: 2rem;
+}
+
+.containerPesquisaListagemUser input{
+    border:1px solid #dddbdb;
+    outline: #dddbdb;
+    padding: 5px;
+    border-radius: 5px;
+    width: calc(100% - 3rem);
+    height: 2rem;
+}
+
+.containerPesquisaListagemUser ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    min-height: 150px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.containerPesquisaListagemUser ul li{
+    border-bottom: 1px solid #f1efef;
+    height: 4rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    align-items: center;
+    padding: 0px 10px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.containerPesquisaListagemUser ul li:hover {
+    color:#43b341;
+    box-shadow: 0px 1px 3px 1px #b9b9b9;
+}
+

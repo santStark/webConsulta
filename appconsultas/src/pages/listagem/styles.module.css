@@ -1,0 +1,136 @@
+.containerListagem{
+    background:white;
+    width: calc(100% - 6rem);
+    height: calc(100vh - 3rem);
+    border-radius: 5px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.containerListagem h3{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.containerSearch{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerSearch input{
+
+    height: 3rem;
+    width: calc(90% - 4rem);
+    padding: 5px;
+    font-size: 1.3rem;
+    border: 1px solid #f1efef;
+    border-radius: 5px;
+    margin-right: 1rem;
+    outline:#f1efef;
+    
+}
+
+.containerSearch a{
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid #f1efef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeee;
+    box-shadow: 0px 1px 3px 1px #b9b9b9;
+    cursor: pointer;
+}
+
+.containerSearch >a:hover{
+
+    background: #43b341;
+    color:white;
+
+}
+
+.containerConsultas{
+    width: calc(90% + 4rem);
+    min-height: 400px;
+    overflow-y:auto ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.containerListagemUser{
+
+    width: calc(90% + 4rem);
+    min-height: 400px;
+    overflow-y:auto ;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+}
+
+.containerListagemUser li{
+    border-bottom: 1px solid #f1efef;
+    height: 4rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    align-items: center;
+    padding: 0px 10px;
+
+}
+
+.containerListagemUser li span{
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+.containerListagemUser li img{ 
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10%;
+    box-shadow: 0px 0px 1px 1px #b9b9b9;
+}
+
+.containerListagemUser li:hover {
+    color:#43b341;
+    box-shadow: 0px 1px 3px 1px #b9b9b9;
+}
+
+.containerListagemUser li  a{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid #f1efef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeee;
+    box-shadow: 0px 1px 3px 1px #b9b9b9;
+    cursor: pointer;
+}
+
+.containerListagemUser a:hover{
+
+    background: #43b341;
+    color:white;
+
+}
+
+@media (max-width: 720px){
+
+    .containerListagem{
+        width: 100%!important ;
+        height: calc(100vh - 7rem)!important;
+    }
+
+}
