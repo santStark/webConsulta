@@ -1,4 +1,4 @@
 
-const strConn = "mysql://root:admin@@localhost:3306/BDCONSULTAS";
+const strConn = "sua string de conexão";
 
 module.exports = {strConn}
