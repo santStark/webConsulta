@@ -6,16 +6,16 @@ O projeto simula o passo a passo para marcar uma consulta.
 
 # Instalação
 
-##Banco MySQL
+## Banco MySQL
 - Faça a importação do banco que se encontra na pasta bdconsulta.
 
-##Server
+## Server
 - Entre na pasta server.
 - Execute o comando "npm install"
 - Altere o arquivo strConn.js com sua string de conexão mysql.
 - Execute o comando "node server"
 
-##React
+## React
 - Entre na pasta appconsultas.
 - Execute o comando "npm install"
 - Altere o arquivo apiPath.ts com seu caminho da api.
