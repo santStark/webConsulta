@@ -1,3 +1,7 @@
+.clsPacientes{
+    color:red;
+}
+
 .containerPacientes{
     background:white;
     width: calc(100% - 6rem);
