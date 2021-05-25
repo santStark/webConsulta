@@ -220,7 +220,10 @@ export default function Concultas() {
 
     function clickPaciente(e) {
 
-        const i = e.target.getAttribute('data-index');
+        const li = e.target.closet('li');
+        if(!li) return;
+
+        const i = li.getAttribute('data-index');
         const el = (document.querySelector('.' + styles.containerPesquisaPaciente) as HTMLElement);
         const fi = document.querySelector('.' + styles.containerFields);
 
@@ -271,7 +274,10 @@ export default function Concultas() {
 
     function clickMedico(e) {
 
-        const i = e.target.getAttribute('data-index');
+        const li = e.target.closet('li');
+        if(!li) return;
+        
+        const i = li.getAttribute('data-index');
         const el = (document.querySelector('.' + styles.containerPesquisaMedico) as HTMLElement);
         const fi = document.querySelector('.' + styles.containerFields);
 
