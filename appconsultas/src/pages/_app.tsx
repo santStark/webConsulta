@@ -10,11 +10,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <span className={
-      styles.containerIndex +' '+
-      stylesPaciente.containerPacientes+' '+
-      stylesMedico.containerMedicos+' '+
-      stylesListagem.containerListagem+' '+
-      stylesConsultas.containerConsulta } style={{display:'none'}}></span>
+      styles.clsIndex +' '+
+      stylesPaciente.clsPacientes+' '+
+      stylesMedico.clsMedicos+' '+
+      stylesListagem.clsListagem+' '+
+      stylesConsultas.clsConsulta } style={{display:'none'}}></span>
     <div className='divBack'></div>
     <div className='container'>
       <Menu />

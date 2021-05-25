@@ -1,3 +1,7 @@
+.clsIndex{
+    color:red;
+}
+
 .containerIndex{
     background:white;
     width: calc(100% - 6rem);
