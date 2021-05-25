@@ -55,7 +55,7 @@ export default function Home(props: IProps) {
     <div className={styles.containerIndex}>
       <h3 className="fas fa-calendar-alt fa-3x"> CONSULTAS</h3>
       <div className={styles.containerSearch}>
-        <input type="search" placeholder="pesquisar: Dia, Medico" onInput={seachConsulta} />
+        <input type="search" placeholder="pesquisar: Dia, Médico" onInput={seachConsulta} />
         <Link href="/consultas/0">
           <a className="fas fa-calendar-plus fa-2x" title="Nova Consulta"></a>
         </Link>

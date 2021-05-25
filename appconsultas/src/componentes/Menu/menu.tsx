@@ -10,7 +10,7 @@ export function Menu() {
             </Link>
 
             <Link href='/listagem/medicos'>
-                <a className="fas fa-user-nurse fa-3x" title="Medicos"></a>
+                <a className="fas fa-user-nurse fa-3x" title="Médicos"></a>
             </Link>
 
             <Link href='/listagem/pacientes'>

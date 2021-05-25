@@ -315,7 +315,7 @@ export default function Concultas() {
                             </div>
 
 
-                            <label>Medico:</label>
+                            <label>Médico:</label>
                             <div>
                                 <input type="text" defaultValue={consulta.medico} data-field="medico" disabled data-id={consulta.idmedico} onChange={handleChange} />
                                 <button type="button" className='fas fa-search' onClick={openSearchMedico}></button>

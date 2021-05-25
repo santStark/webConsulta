@@ -97,7 +97,7 @@ export default function Listagem() {
                     :
                     (
                         <>
-                            <h3 className="fas fa-user-nurse fa-3x"> MEDICOS</h3>
+                            <h3 className="fas fa-user-nurse fa-3x"> MÉDICOS</h3>
                             <div className={styles.containerSearch}>
                                 <input type="search" placeholder="pesquisar: Nome, Especialidade" onInput={seachMedico }/>
                                 <Link href={ '/medicos/0' }>

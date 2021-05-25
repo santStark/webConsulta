@@ -160,7 +160,7 @@ export default function Medicos() {
 
     return (
         <div className={styles.containerMedicos}>
-            <h3 className="fa fa-user fa-3x"> Medicos</h3>
+            <h3 className="fa fa-user fa-3x"> Médicos</h3>
             <form onSubmit={handleSubmit}>
                 {
                     <>
