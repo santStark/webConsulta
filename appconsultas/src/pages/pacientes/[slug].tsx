@@ -1,8 +1,7 @@
 import styles from './styles.module.css';
-import { api } from '../../services/api';
+import { api, toDate } from '../../services/api';
 import { useRouter } from 'next/router'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import { isGeneratorFunction } from 'util/types';
+import { useEffect, useState } from 'react';
 
 interface IPaciente {
     id: number,
@@ -34,10 +33,12 @@ export default function Pacientes() {
             obj.email = ' ';
             obj.cpf = ' ';
             obj.rg = ' ';
-            obj.nasc = ' ';
+            obj.nasc = '';
             obj.senha = ' ';
             data.push(obj);
         }
+
+        data[0].nasc = toDate(data[0].nasc,'dd/mm/yyyy','br');
 
         setPaciente(data[0])
     }
@@ -54,12 +55,12 @@ export default function Pacientes() {
 
         const obj = {} as IPaciente;
         obj.id = el.querySelector('input[data-field="id"]').value.trim();
-        obj.nome = el.querySelector('input[data-field="nome"]').value.trim();
-        obj.email = el.querySelector('input[data-field="email"]').value.trim();
-        obj.cpf = el.querySelector('input[data-field="cpf"]').value.trim();
-        obj.rg = el.querySelector('input[data-field="rg"]').value.trim();
-        obj.nasc = el.querySelector('input[data-field="nasc"]').value.trim();
-        obj.senha = el.querySelector('input[data-field="senha"]').value.trim();
+        obj.nome = el.querySelector('input[data-field="nome"]').value.trim().substr(0,99);
+        obj.email = el.querySelector('input[data-field="email"]').value.trim().substr(0,30);
+        obj.cpf = el.querySelector('input[data-field="cpf"]').value.trim().substr(0,11);
+        obj.rg = el.querySelector('input[data-field="rg"]').value.trim().substr(0,11);
+        obj.nasc = toDate(el.querySelector('input[data-field="nasc"]').value.trim(),'yyyy-mm-dd','us');;
+        obj.senha = el.querySelector('input[data-field="senha"]').value.trim().substr(0,20);
 
         const { data } = await api.post('paciente/', obj);
 
@@ -186,7 +187,7 @@ export default function Pacientes() {
 
 
                             <label>Nasc:</label>
-                            <input type="text" defaultValue={paciente.nasc} data-field="nasc" onChange={handleChange} />
+                            <input type="date" defaultValue={paciente.nasc} data-field="nasc" onChange={handleChange} />
 
 
                             <label>Senha:</label>

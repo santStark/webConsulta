@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { api } from '../../services/api';
+import { api, toDate } from '../../services/api';
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -20,6 +20,7 @@ interface IConsultas {
     dia: string,
     hora: string
 }
+
 export default function Concultas() {
 
     const [consulta, setConsulta] = useState({} as IConsultas);
@@ -66,6 +67,7 @@ export default function Concultas() {
             data.push(obj);
         }
 
+        data[0].dia = toDate(data[0].dia,'dd/mm/yyyy','br');
         setConsulta(data[0])
     }
 
@@ -87,7 +89,7 @@ export default function Concultas() {
         obj.id = el.querySelector('input[data-field="id"]').value.trim();
         obj.paciente = el.querySelector('input[data-field="paciente"]').getAttribute('data-id').trim();
         obj.medico = el.querySelector('input[data-field="medico"]').getAttribute('data-id').trim();
-        obj.dia = el.querySelector('input[data-field="dia"]').value.trim();
+        obj.dia = toDate(el.querySelector('input[data-field="dia"]').value.trim(),'yyyy-mm-dd','us');
         obj.hora = el.querySelector('input[data-field="hora"]').value.trim();
 
 
@@ -167,7 +169,9 @@ export default function Concultas() {
 
         el.querySelector('input[data-field="id"]')['value'] = consulta.id;
         el.querySelector('input[data-field="paciente"]')['value'] = consulta.paciente;
+        el.querySelector('input[data-field="paciente"]').setAttribute('data-id', consulta.idpaciente.toString())
         el.querySelector('input[data-field="medico"]')['value'] = consulta.medico;
+        el.querySelector('input[data-field="medico"]').setAttribute('data-id', consulta.idmedico.toString());
         el.querySelector('input[data-field="dia"]')['value'] = consulta.dia;
         el.querySelector('input[data-field="hora"]')['value'] = consulta.hora;
     }
@@ -235,7 +239,7 @@ export default function Concultas() {
 
     }
 
-    function closeSearchPaciente(){
+    function closeSearchPaciente() {
         const el = (document.querySelector('.' + styles.containerPesquisaPaciente) as HTMLElement);
         if (!el) return;
         el.style.display = 'none';
@@ -286,7 +290,7 @@ export default function Concultas() {
 
     }
 
-    function closeSearchMedico(){
+    function closeSearchMedico() {
         const el = (document.querySelector('.' + styles.containerPesquisaMedico) as HTMLElement);
         if (!el) return;
         el.style.display = 'none';
@@ -300,8 +304,8 @@ export default function Concultas() {
                     <>
                         <div className={styles.containerFields}>
 
-                            
-                            <input type="text"  style={{display:'none'}} value={consulta.id > 0 ? consulta.id : 0} data-field="id" onChange={handleChange} />
+
+                            <input type="text" style={{ display: 'none' }} value={consulta.id > 0 ? consulta.id : 0} data-field="id" onChange={handleChange} />
 
 
                             <label>Paciente:</label>
@@ -319,11 +323,11 @@ export default function Concultas() {
 
 
                             <label>Dia:</label>
-                            <input type="text" defaultValue={consulta.dia} data-field="dia" onChange={handleChange} />
+                            <input type="date" defaultValue={ consulta.dia } data-field="dia" onChange={handleChange} />
 
 
                             <label>Hora:</label>
-                            <input type="text" defaultValue={consulta.hora} data-field="hora" onChange={handleChange} />
+                            <input type="time" defaultValue={consulta.hora} data-field="hora" onChange={handleChange} />
 
                         </div>
                         <div className={styles.containerBtns}>

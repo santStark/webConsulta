@@ -1,8 +1,7 @@
 import styles from './styles.module.css';
-import { api } from '../../services/api';
+import { api, toDate } from '../../services/api';
 import { useRouter } from 'next/router'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import { isGeneratorFunction } from 'util/types';
+import {  useEffect, useState } from 'react';
 
 interface IMedico {
     id: number,
@@ -34,10 +33,12 @@ export default function Medicos() {
             obj.especialidade = ' ';
             obj.cpf = ' ';
             obj.rg = ' ';
-            obj.nasc = ' ';
+            obj.nasc = '';
             obj.senha = ' ';
             data.push(obj);
         }
+
+        data[0].nasc = toDate(data[0].nasc,'dd/mm/yyyy','br');
 
         setMedico(data[0])
     }
@@ -54,12 +55,12 @@ export default function Medicos() {
 
         const obj = {} as IMedico;
         obj.id = el.querySelector('input[data-field="id"]').value.trim();
-        obj.nome = el.querySelector('input[data-field="nome"]').value.trim();
-        obj.especialidade = el.querySelector('input[data-field="especialidade"]').value.trim();
-        obj.cpf = el.querySelector('input[data-field="cpf"]').value.trim();
-        obj.rg = el.querySelector('input[data-field="rg"]').value.trim();
-        obj.nasc = el.querySelector('input[data-field="nasc"]').value.trim();
-        obj.senha = el.querySelector('input[data-field="senha"]').value.trim();
+        obj.nome = el.querySelector('input[data-field="nome"]').value.trim().substr(0,98);
+        obj.especialidade = el.querySelector('input[data-field="especialidade"]').value.trim().substr(0,29);
+        obj.cpf = el.querySelector('input[data-field="cpf"]').value.trim().substr(0,11);
+        obj.rg = el.querySelector('input[data-field="rg"]').value.trim().substr(0,11);
+        obj.nasc = toDate(el.querySelector('input[data-field="nasc"]').value.trim(),'yyyy-mm-dd','us');;
+        obj.senha = el.querySelector('input[data-field="senha"]').value.trim().substr(0,20);
 
         const { data } = await api.post('medico/', obj);
 
@@ -186,7 +187,7 @@ export default function Medicos() {
 
 
                             <label>Nasc:</label>
-                            <input type="text" defaultValue={medico.nasc} data-field="nasc" onChange={handleChange} />
+                            <input type="date" defaultValue={medico.nasc} data-field="nasc" onChange={handleChange} />
 
 
                             <label>Senha:</label>
