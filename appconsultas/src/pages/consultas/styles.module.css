@@ -1,3 +1,7 @@
+.clsConsulta{
+    color:red;
+}
+
 .containerConsulta{
     background:white;
     width: calc(100% - 6rem);
