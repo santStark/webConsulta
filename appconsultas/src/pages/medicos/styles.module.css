@@ -1,3 +1,7 @@
+.clsMedicos{
+    color:red;
+}
+
 .containerMedicos{
     background:white;
     width: calc(100% - 6rem);
